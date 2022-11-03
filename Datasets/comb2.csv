@@ -1,0 +1,11 @@
+PatientID,Lab_test,Result
+123-984/45,A,Present
+123-345/34,A,Absent
+134-093/43,A,Present
+190-032/34,B,Present
+190-309/32,B,Absent
+234-092/23,B,Present
+231-902/21,B,Absent
+231-309/21,A,Absent
+134-092/34,B,Present
+234-984/43,A,Present

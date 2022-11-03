@@ -1,0 +1,14 @@
+Sno,CourseCode,BeginDate,EndDate,Venue,Course name,Duration
+1,1,23-11-2014,13-12-2015,Hinjewadi,R Programming,20
+2,1,24-11-2014,15-12-2014,Vimannagar,R Programming,20
+3,2,13-04-2014,13-05-2014,Hinjewadi,Machine Learning Algorithms,20
+4,2,14-09-2014,12-12-2014,Magarpatta,Machine Learning Algorithms,20
+5,3,04-05-2014,09-06-2014,Hinjewadi,Data Science with R,75
+6,3,06-09-2014,07-10-2014,Vimannagar,Data Science with R,75
+7,3,18-08-2014,23-10-2014,Magarpatta,Data Science with R,75
+8,4,12-09-2014,13-10-2014,Vimannagar,Clinical Statistics with R,30
+9,4,14-07-2014,14-08-2014,Magarpatta,Clinical Statistics with R,30
+10,5,12-11-2014,31-12-2014,Hinjewadi,SAS Programming,80
+11,6,14-12-2014,03-01-2015,"Sakinaka, Mumbai",Clinical Statistics with SAS,30
+12,6,12-01-2015,03-02-2015,Magarpatta,Clinical Statistics with SAS,30
+13,6,12-02-2015,03-03-2015,Vimannagar,Clinical Statistics with SAS,30

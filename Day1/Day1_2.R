@@ -99,5 +99,51 @@ rb <- rbind(name,age)
 rb
 #or cut off 
 m <- matrix(c(9,3,1,5,6,3),2,2) #Column wise
+m
+
+#Array - Used sparingly as matrix does the job of 2 dim and vectors as 1 dim
+#Mostly used for process more than 2 dim data
+
+a <- array(dim=c(3,2))
+a
+#To put values in array
+
+a[1,1] <- 4.56
+a[1,2] <- 9
+a[3,2] <- 5
+a
+
+#Extracting colnames from the data
+data("mtcars")
+colnames(mtcars)
+
+#For list we use name functions, colnames wont work
+s <- list(a=6,g=9.43,h="ftr",k=c(4,2,1,5))
+names(s)
 
 
+#Reading CSV(COMMA SEPARATED VALUES) files
+#Make sure that the header is there if the header tag in the read function is set to
+#TRUE or the first data in the file will be appropriated as header
+b2 <- read.csv("E:/R/Datasets/Bollywood_2015_2.csv")
+View(b2)
+
+#header set to False
+b2 <- read.csv("E:/R/Datasets/Bollywood_2015_2.csv",header = F)
+colnames(b2) <- c("Movies","BO","Budget","Verdict")
+
+View(b2) 
+ 
+b3 <- read.csv("E:/R/Datasets/Bollywood_2015.csv")
+View(b3)
+
+#Set working directory for our Datasets so that we dont have to provide full path
+setwd("E:/R/Datasets/")
+
+#If data is separated by something other than ','
+b4 <- read.csv("Diamonds.csv",sep = ";")
+
+#It is recommended to use read.csv2 function rather than csv
+d1 <- read.csv2("")
+#It is equivalent to 
+b4 <- read.csv("Diamonds.csv",sep = ";",dec=",")

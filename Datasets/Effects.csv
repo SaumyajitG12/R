@@ -1,0 +1,11 @@
+PatientID,Treatment,Effect
+A01,X,82
+A02,X,90
+A03,X,100
+A04,X,76
+A05,X,89
+A01,Y,90
+A02,Y,110
+A03,Y,120
+A04,Y,124
+A05,Y,100

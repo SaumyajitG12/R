@@ -1,0 +1,7 @@
+CourseID,Course,Duration_hours,Fee
+1,R Programming,20,10000
+2,Machine Learning Algorithms,20,10000
+3,Data Science with R,75,30000
+4,Clinical Statistics with R,30,15000
+5,SAS Programming,80,30000
+6,Clinical Statistics with SAS,30,25000

@@ -1,0 +1,11 @@
+PID,Treatment,SideEffects
+A04,X,Cough
+A03,Y,Cough
+A02,X,Headache
+A01,Y,Headache
+A02,Y,Headache
+A04,Y,Headache
+A03,X,Stomach pain
+A01,X,Vomitting
+A05,X,Vomitting
+A05,Y,Vomitting
