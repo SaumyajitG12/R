@@ -144,7 +144,7 @@ setwd("E:/R/Datasets/")
 b4 <- read.csv("Diamonds.csv",sep = ";")
 
 #It is recommended to use read.csv2 function rather than csv
-d1 <- read.csv2("")
+d1 <- read.csv2("Diamonds.csv")
 #It is equivalent to 
 b4 <- read.csv("Diamonds.csv",sep = ";",dec=",")
 
