@@ -147,3 +147,7 @@ b4 <- read.csv("Diamonds.csv",sep = ";")
 d1 <- read.csv2("")
 #It is equivalent to 
 b4 <- read.csv("Diamonds.csv",sep = ";",dec=",")
+
+#csv2 was created for convenience 
+#Both CS and CSv2 are the same function read.table with different parameters
+#for the Separator(sep) and the Decimal (dec) operator
