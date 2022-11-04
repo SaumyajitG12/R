@@ -57,12 +57,27 @@ ds
 
 ds1 <- read.csv("breast-cancer-wisconsin.names",sep = " ",header=F)
 ds1
-ds2 <- ds1[108:130,4:5, drop=F]
-dc1 <- ds2[c(19,21),1]
-dc2 <- ds2[c(2,3,4,8,10,12,13,15,17),2]
+dc1 <- ds1[108:130,4:5, drop=F][c(19,21),1]
+dc2 <- ds1[108:130,4:5, drop=F][c(2,3,4,8,10,12,13,15,17),2]
 dc1
-class(dc1)
-class(dc2)
 colv <- append(dc2,dc1)
 colnames(ds) <- colv 
+ds
+
+#OR
+
+ds1 <- read.csv("breast-cancer-wisconsin.names",header=F,skip = 105,sep = " ")
+ds <- read.csv("breast-cancer-wisconsin.data",header=F)
+colnames(ds) <- append(ds1[1:10,5][c(-8)],ds1[c(11,13),4])
+ds
+
+#OR
+
+ds <- read.csv("breast-cancer-wisconsin.data",header=F)
+ds
+
+ds1 <- read.csv("breast-cancer-wisconsin.names",sep = " ",header=F)
+ds1
+colnames(ds) <- append(ds1[108:130,4:5, drop=F][c(2,3,4,8,10,12,13,15,17),2],ds1[108:130,4:5, drop=F][c(19,21),1])
+
 ds
