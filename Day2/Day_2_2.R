@@ -158,3 +158,25 @@ dt1 <- dmy(cdt1)
 cdt2 <- "03-31-2022"
 dt1 <- mdy(cdt2)
 
+dt <- "20, Feb 2015 13:40:32"
+dt_prn <- parse_date_time(dt, "dmy_HMS")
+class(dt_prn)
+dt_prn
+
+#THese functions also work on vectors
+cdt <- c("12-Nov-2022", "15-Jun-2022","29-Sep-2022")
+
+dt <- dmy(cdt)
+#Functions to extract relevant number from date
+d <-day(dt)
+d
+month(dt,label = F, abbr = F) #Label for full month, ABBR for small like Jan for January
+year(dt)
+wday(dt)
+wday(dt,label=T) #The label makes the Output give the full name of the day of the week
+
+#1->Sunday, 2->Monday etc
+
+month(dt) <- month(dt)+1 #This increases the month value within all the elements of dt by 1
+
+
