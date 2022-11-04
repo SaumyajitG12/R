@@ -180,3 +180,98 @@ wday(dt,label=T) #The label makes the Output give the full name of the day of th
 month(dt) <- month(dt)+1 #This increases the month value within all the elements of dt by 1
 
 
+
+
+
+#################TIDYVERSE###################
+
+
+
+#Part of Modern R developed post 2008
+#Developed in a different way
+#This is because earlier it was used for Maths and Stats and not for large scale computations
+#or data analysis or re-emergence of AI
+
+#Tidyverse is a group of R packages, like (ggplot,dplyr,tidyr,tibble etc)
+
+#to install the entire tidyverse do
+install.packages("tidyverse")
+
+library(tidyverse)
+
+###########DPLYR(DATA PLYER)#############
+
+#tbl_df more efficient than traditional dataframe, subclass of tbl which is subclass ofdataframe
+
+dd=as_tibble(mtcars)
+class(dd)
+dd
+
+cars93 <- read.csv("Cars93.csv",stringsAsFactors = T)
+str(cars)
+
+#Sorting using Arrange
+a <- arrange(cars93, Price) #Arrange will sort the data based on the provided parameter
+
+a <- arrange(cars93,Type, Price) #We can provide a third parameter to sort it within the sorted data
+                                  #based on the first parameter
+
+
+
+a <- arrange(cars93,Type, desc(Price))
+
+
+#Selecting columns
+
+sel_cars <- select(cars93, Model, Type, Price) #Select Model, type ,Price from cars
+sel_cars <- select(cars93, Model:Max.Price) #Select a range of columns from Model to Max_price
+
+#getting cols with regex, starts and ends with and contains
+sel_cars <- select(cars93, starts_with("MPG")) 
+sel_cars <- select(cars93, ends_with("Price"))
+sel_cars <- select(cars93, contains("in"))
+
+#Subsetting the data using filter : faster than subset
+
+ss_cars <- filter(cars93, Type=="Compact")
+ss_cars <- filter(cars93, Type=="Compact" & Price>20) #Intersection: Cars that are compact and Price >20
+ss_cars <- filter(cars93, Type=="Compact" | Price>20)#Union: Cars that are compact or Price >20
+
+
+#Like SQL in operator Manufacturer in Audi or Acura, like |
+ss_cars <- filter(cars93, Manufacturer %in% c("Ford","Audi"))
+
+#Rename the columns, assign to original var to overwrite
+r_cars <- rename(cars93,Minimum=Min.Price, Maximum=Max.Price)
+
+#Add custom columns but at a time you can do multiple columns using mutate
+r_cars <- mutate(cars93, Price_range=Max.Price-Min.Price, Ratio=Weight/Passengers)
+
+##########Summarizing the data##############
+
+summarise(cars93, avg_price=mean(Price, na.rm=T))
+summarise(cars93, avg_price=mean(Price, na.rm=T), sd_price=sd(Price, na.rm=T))
+
+#Group by
+
+grp_cars <- group_by(cars93,Type)
+summarise(grp_cars, avg_price=mean(Price, na.rm=T), sd_price=sd(Price, na.rm=T))
+
+#Chaining/Pipelining
+
+#Using pipeline operators |> or %>% CTRL+SHIFT+M for operator
+
+cars93 %>% 
+  group_by(Type) %>%
+        summarise(avg_price=mean(Price, na.rm=T), sd_price=sd(Price, na.rm=T))
+
+ss_cars <- cars93 %>% filter( Type=="Compact" & Price>20) #Previous filter function written with pipelining
+
+ss_cars <- cars93 |> filter( Type=="Compact" & Price>20) #Written with the other operator,
+#This operator is present in the core R while the other %>%  is from R studio
+
+
+
+
+
+
