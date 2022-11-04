@@ -1,9 +1,3 @@
-#Generate sequence of numbers
-seq
-
-#table(row,column,filter) form dataset function provides the frequency table
-table
-
 
 cars <- read.csv("Cars93.csv",stringsAsFactors = T)
 str(cars)
