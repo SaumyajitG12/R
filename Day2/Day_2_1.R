@@ -74,7 +74,7 @@ quantile(a)
 quantile(survery$Pulse, na.rm = T) #na.rm is true so that the func removes na data
 
 #If we want to find specific percentile we can use probs flag
-quantile(survery$Pulse, na.rm = T, probs=0.6)
+quantile(survery$Pulse, na.rm = T, probs=0.6) #This shows 60th percentile 
 
 #Summary function gives you mean max quartile median and the NA's
 summary(survery$Pulse)
