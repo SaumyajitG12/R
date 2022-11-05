@@ -130,8 +130,8 @@ TVrate <- data.frame(channel=c("A",NA,NA,"B",NA,NA,NA),
                      ratings = c(2,3,4,5,6,7,2))
 
 
-
-quality <- read.csv("quality.csv")
+#Pivot longer test exercise
+quality <- read.csv("qual\ity.csv")
 
 pivot_longer(quality, -Id, names_to = "New_col", values_to = "New_val")
 
