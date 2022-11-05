@@ -1,0 +1,189 @@
+---
+title: "Day3_2"
+format: html
+editor: visual
+---
+
+####################Graphical Data Representation######################
+
+Bar Plot
+
+```{r}
+setwd("E:/R/Datasets/")
+cars93 <- read.csv("Cars93.csv")
+
+a <- c(45,20,14)
+b <- c(40,20,10)
+barplot(a) #Basic, crude bar graphs
+
+```
+
+More than 1 column :
+
+```{r}
+ab <- rbind(a,b) #Binding a and b as rows in dataframe
+barplot(ab)#Plotting A and B crudely
+```
+
+'beside' stacks them side by side 'col' will specify the color for the bars
+
+Setting the bar colors to red and blue
+
+```{r}
+barplot(ab, beside=T, col=c("red","blue"))
+```
+
+Making a barplot on the frequency table of Types col in cars93 dataset :
+
+```{r}
+table(cars93$Type) |> barplot()
+
+```
+
+Now bar graph on 2 different columns
+
+```{r}
+table(cars93$Type, cars93$Origin) |> barplot(,beside=T)
+
+```
+
+If we want to provide a title to the main graph :
+
+```{r}
+table(cars93$Type, cars93$Origin) |> barplot(,beside=T,main="Car Types")
+
+```
+
+                    -------------HISTOGRAM----------------
+
+```{r}
+hist(cars93$Price, breaks=10) #Breaks are where the class interval is present
+```
+
+Class intervals should have equal width 
+Class intervals are also known as Bins
+
+Histograms have continuous scale at x axis so we cant shuffle Judge breaks correctly, too many breaks can screw up the data
+
+```{r}
+setwd("E:/R/Datasets/")
+d <- read.csv2("Diamonds.csv")
+hist(d$price, breaks=10,main = "Diamond Pricing", col=colors()[45]) #Breaks are where the class interval is present
+colors()
+```
+
+Gives you all the colors in R You can specify colors()\[<number>\] to get the colors according to the number assigned to the color
+
+                                ####BOX PLOT######
+                                
+Also known as Box and Whisker plot which are the two lines above and below the box
+
+Gap between FIrst and 3rd Quartile is called Inter Quartile Range (IQR) In boxplot we only plot quartiles #Any data point that is 1.5IQR away from the edge of Box Plot it is tagged as Outlier
+
+Outliers are extreme Observations that need to be tracked, more the variation more the outliers
+
+```{r}
+boxplot(cars93$Price) #Some outliers
+boxplot(d$price)      #Many Outliers
+
+boxplot(cars93$RPM) #No outliers
+
+boxplot(d$depth) #Too many outliers
+```
+
+If we want to do boxplots for one col related to another col(Like group by)
+
+```{r}
+boxplot(cars93$Price ~ cars93$Type) #Price for every category
+boxplot(d$depth ~ d$cut)
+
+```
+
+IF we want to change the scale it is ylim for y axis and xlim for xaxis
+
+                      ###########SCATTERPLOT##########
+                      
+                      
+Pch stands for Plotting Character, its the legend that marks a data point
+Col for which color for the pch
+```{r}
+plot(cars93$Price,cars93$MPG.city)
+
+plot(cars93$Price,cars93$MPG.city,pch=18, col ="green")
+
+```
+
+xlab = Xlabel
+ylab = Ylabel
+main=Name of the graph
+
+```{r}
+plot(cars93$Price,cars93$MPG.city,pch=18, col ="green", xlab="Car Price", ylab="Miles per Gallon",
+     main="Scatter")
+
+```
+                          ########LINE PLOT###########
+
+For timeseries based graphs X axis should be time
+WHenever we plot against time its better to plot it as a linegraph
+
+
+```{r}
+setwd("E:/R/Datasets/")
+gas <- read.csv("Gasoline.csv")
+plot(gas$Week, gas$Sales, type='l') #Type = l for lineplot
+plot(gas$Week, gas$Sales, type='b')#Type = b for lineplot and show the data points
+```
+                            ####DENSITY PLOT#####
+
+Like histogram, but smoothened
+Call density function on the data and then use Plot()
+
+
+```{r}
+cars93$Price |> density() |> plot()
+```
+OR
+
+```{r}
+plot(density(cars93$Price))
+```
+#--------------------------------------------------------------------------------------#
+                               #####################
+                               #      GGPLOT2      #
+                               #####################
+                               
+                               
+                               
+
+For ggplot2, use function ggplot, specify the dataframe, then function aes[AESTHETIC] within it
+to specify what is gonna be x axis and y axis and then 
+USE "+" operator and pass the relevant plot function
+
+geom_point() for scatterplot
+
+```{r}
+library(ggplot2)
+setwd("E:/R/Datasets/")
+sal <- read.csv("Salaries.csv", stringsAsFactors = T)
+ggplot(data=sal, aes(x=yrs.service,y=salary)) + geom_point()
+
+```
+
+If values correspond to specific groups/ranks/columns we can specify separate colors for them
+For rank
+
+```{r}
+ggplot(data=sal, aes(x=yrs.service,y=salary,color=rank)) + geom_point()
+
+```
+
+For Gender
+
+```{r}
+ggplot(data=sal, aes(x=yrs.service,y=salary,color=sex)) + geom_point()
+```
+
+
+
+                               

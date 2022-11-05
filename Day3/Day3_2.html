@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Day3_2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="Day3_2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Day3_2_files/libs/quarto-html/quarto.js"></script>
+<script src="Day3_2_files/libs/quarto-html/popper.min.js"></script>
+<script src="Day3_2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Day3_2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Day3_2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Day3_2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Day3_2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Day3_2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Day3_2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Day3_2</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>####################Graphical Data Representation######################</p>
+<p>Bar Plot</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"E:/R/Datasets/"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>cars93 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Cars93.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>,<span class="dv">20</span>,<span class="dv">14</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">40</span>,<span class="dv">20</span>,<span class="dv">10</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(a) <span class="co">#Basic, crude bar graphs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>More than 1 column :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ab <span class="ot">&lt;-</span> <span class="fu">rbind</span>(a,b) <span class="co">#Binding a and b as rows in dataframe</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(ab)<span class="co">#Plotting A and B crudely</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>‘beside’ stacks them side by side ‘col’ will specify the color for the bars</p>
+<p>Setting the bar colors to red and blue</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(ab, <span class="at">beside=</span>T, <span class="at">col=</span><span class="fu">c</span>(<span class="st">"red"</span>,<span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Making a barplot on the frequency table of Types col in cars93 dataset :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(cars93<span class="sc">$</span>Type) <span class="sc">|&gt;</span> <span class="fu">barplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Now bar graph on 2 different columns</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(cars93<span class="sc">$</span>Type, cars93<span class="sc">$</span>Origin) <span class="sc">|&gt;</span> <span class="fu">barplot</span>(,<span class="at">beside=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>If we want to provide a title to the main graph :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(cars93<span class="sc">$</span>Type, cars93<span class="sc">$</span>Origin) <span class="sc">|&gt;</span> <span class="fu">barplot</span>(,<span class="at">beside=</span>T,<span class="at">main=</span><span class="st">"Car Types"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<pre><code>                -------------HISTOGRAM----------------</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(cars93<span class="sc">$</span>Price, <span class="at">breaks=</span><span class="dv">10</span>) <span class="co">#Breaks are where the class interval is present</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Class intervals should have equal width Class intervals are also known as Bins</p>
+<p>Histograms have continuous scale at x axis so we cant shuffle Judge breaks correctly, too many breaks can screw up the data</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"E:/R/Datasets/"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"Diamonds.csv"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(d<span class="sc">$</span>price, <span class="at">breaks=</span><span class="dv">10</span>,<span class="at">main =</span> <span class="st">"Diamond Pricing"</span>, <span class="at">col=</span><span class="fu">colors</span>()[<span class="dv">45</span>]) <span class="co">#Breaks are where the class interval is present</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colors</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "white"                "aliceblue"            "antiquewhite"        
+  [4] "antiquewhite1"        "antiquewhite2"        "antiquewhite3"       
+  [7] "antiquewhite4"        "aquamarine"           "aquamarine1"         
+ [10] "aquamarine2"          "aquamarine3"          "aquamarine4"         
+ [13] "azure"                "azure1"               "azure2"              
+ [16] "azure3"               "azure4"               "beige"               
+ [19] "bisque"               "bisque1"              "bisque2"             
+ [22] "bisque3"              "bisque4"              "black"               
+ [25] "blanchedalmond"       "blue"                 "blue1"               
+ [28] "blue2"                "blue3"                "blue4"               
+ [31] "blueviolet"           "brown"                "brown1"              
+ [34] "brown2"               "brown3"               "brown4"              
+ [37] "burlywood"            "burlywood1"           "burlywood2"          
+ [40] "burlywood3"           "burlywood4"           "cadetblue"           
+ [43] "cadetblue1"           "cadetblue2"           "cadetblue3"          
+ [46] "cadetblue4"           "chartreuse"           "chartreuse1"         
+ [49] "chartreuse2"          "chartreuse3"          "chartreuse4"         
+ [52] "chocolate"            "chocolate1"           "chocolate2"          
+ [55] "chocolate3"           "chocolate4"           "coral"               
+ [58] "coral1"               "coral2"               "coral3"              
+ [61] "coral4"               "cornflowerblue"       "cornsilk"            
+ [64] "cornsilk1"            "cornsilk2"            "cornsilk3"           
+ [67] "cornsilk4"            "cyan"                 "cyan1"               
+ [70] "cyan2"                "cyan3"                "cyan4"               
+ [73] "darkblue"             "darkcyan"             "darkgoldenrod"       
+ [76] "darkgoldenrod1"       "darkgoldenrod2"       "darkgoldenrod3"      
+ [79] "darkgoldenrod4"       "darkgray"             "darkgreen"           
+ [82] "darkgrey"             "darkkhaki"            "darkmagenta"         
+ [85] "darkolivegreen"       "darkolivegreen1"      "darkolivegreen2"     
+ [88] "darkolivegreen3"      "darkolivegreen4"      "darkorange"          
+ [91] "darkorange1"          "darkorange2"          "darkorange3"         
+ [94] "darkorange4"          "darkorchid"           "darkorchid1"         
+ [97] "darkorchid2"          "darkorchid3"          "darkorchid4"         
+[100] "darkred"              "darksalmon"           "darkseagreen"        
+[103] "darkseagreen1"        "darkseagreen2"        "darkseagreen3"       
+[106] "darkseagreen4"        "darkslateblue"        "darkslategray"       
+[109] "darkslategray1"       "darkslategray2"       "darkslategray3"      
+[112] "darkslategray4"       "darkslategrey"        "darkturquoise"       
+[115] "darkviolet"           "deeppink"             "deeppink1"           
+[118] "deeppink2"            "deeppink3"            "deeppink4"           
+[121] "deepskyblue"          "deepskyblue1"         "deepskyblue2"        
+[124] "deepskyblue3"         "deepskyblue4"         "dimgray"             
+[127] "dimgrey"              "dodgerblue"           "dodgerblue1"         
+[130] "dodgerblue2"          "dodgerblue3"          "dodgerblue4"         
+[133] "firebrick"            "firebrick1"           "firebrick2"          
+[136] "firebrick3"           "firebrick4"           "floralwhite"         
+[139] "forestgreen"          "gainsboro"            "ghostwhite"          
+[142] "gold"                 "gold1"                "gold2"               
+[145] "gold3"                "gold4"                "goldenrod"           
+[148] "goldenrod1"           "goldenrod2"           "goldenrod3"          
+[151] "goldenrod4"           "gray"                 "gray0"               
+[154] "gray1"                "gray2"                "gray3"               
+[157] "gray4"                "gray5"                "gray6"               
+[160] "gray7"                "gray8"                "gray9"               
+[163] "gray10"               "gray11"               "gray12"              
+[166] "gray13"               "gray14"               "gray15"              
+[169] "gray16"               "gray17"               "gray18"              
+[172] "gray19"               "gray20"               "gray21"              
+[175] "gray22"               "gray23"               "gray24"              
+[178] "gray25"               "gray26"               "gray27"              
+[181] "gray28"               "gray29"               "gray30"              
+[184] "gray31"               "gray32"               "gray33"              
+[187] "gray34"               "gray35"               "gray36"              
+[190] "gray37"               "gray38"               "gray39"              
+[193] "gray40"               "gray41"               "gray42"              
+[196] "gray43"               "gray44"               "gray45"              
+[199] "gray46"               "gray47"               "gray48"              
+[202] "gray49"               "gray50"               "gray51"              
+[205] "gray52"               "gray53"               "gray54"              
+[208] "gray55"               "gray56"               "gray57"              
+[211] "gray58"               "gray59"               "gray60"              
+[214] "gray61"               "gray62"               "gray63"              
+[217] "gray64"               "gray65"               "gray66"              
+[220] "gray67"               "gray68"               "gray69"              
+[223] "gray70"               "gray71"               "gray72"              
+[226] "gray73"               "gray74"               "gray75"              
+[229] "gray76"               "gray77"               "gray78"              
+[232] "gray79"               "gray80"               "gray81"              
+[235] "gray82"               "gray83"               "gray84"              
+[238] "gray85"               "gray86"               "gray87"              
+[241] "gray88"               "gray89"               "gray90"              
+[244] "gray91"               "gray92"               "gray93"              
+[247] "gray94"               "gray95"               "gray96"              
+[250] "gray97"               "gray98"               "gray99"              
+[253] "gray100"              "green"                "green1"              
+[256] "green2"               "green3"               "green4"              
+[259] "greenyellow"          "grey"                 "grey0"               
+[262] "grey1"                "grey2"                "grey3"               
+[265] "grey4"                "grey5"                "grey6"               
+[268] "grey7"                "grey8"                "grey9"               
+[271] "grey10"               "grey11"               "grey12"              
+[274] "grey13"               "grey14"               "grey15"              
+[277] "grey16"               "grey17"               "grey18"              
+[280] "grey19"               "grey20"               "grey21"              
+[283] "grey22"               "grey23"               "grey24"              
+[286] "grey25"               "grey26"               "grey27"              
+[289] "grey28"               "grey29"               "grey30"              
+[292] "grey31"               "grey32"               "grey33"              
+[295] "grey34"               "grey35"               "grey36"              
+[298] "grey37"               "grey38"               "grey39"              
+[301] "grey40"               "grey41"               "grey42"              
+[304] "grey43"               "grey44"               "grey45"              
+[307] "grey46"               "grey47"               "grey48"              
+[310] "grey49"               "grey50"               "grey51"              
+[313] "grey52"               "grey53"               "grey54"              
+[316] "grey55"               "grey56"               "grey57"              
+[319] "grey58"               "grey59"               "grey60"              
+[322] "grey61"               "grey62"               "grey63"              
+[325] "grey64"               "grey65"               "grey66"              
+[328] "grey67"               "grey68"               "grey69"              
+[331] "grey70"               "grey71"               "grey72"              
+[334] "grey73"               "grey74"               "grey75"              
+[337] "grey76"               "grey77"               "grey78"              
+[340] "grey79"               "grey80"               "grey81"              
+[343] "grey82"               "grey83"               "grey84"              
+[346] "grey85"               "grey86"               "grey87"              
+[349] "grey88"               "grey89"               "grey90"              
+[352] "grey91"               "grey92"               "grey93"              
+[355] "grey94"               "grey95"               "grey96"              
+[358] "grey97"               "grey98"               "grey99"              
+[361] "grey100"              "honeydew"             "honeydew1"           
+[364] "honeydew2"            "honeydew3"            "honeydew4"           
+[367] "hotpink"              "hotpink1"             "hotpink2"            
+[370] "hotpink3"             "hotpink4"             "indianred"           
+[373] "indianred1"           "indianred2"           "indianred3"          
+[376] "indianred4"           "ivory"                "ivory1"              
+[379] "ivory2"               "ivory3"               "ivory4"              
+[382] "khaki"                "khaki1"               "khaki2"              
+[385] "khaki3"               "khaki4"               "lavender"            
+[388] "lavenderblush"        "lavenderblush1"       "lavenderblush2"      
+[391] "lavenderblush3"       "lavenderblush4"       "lawngreen"           
+[394] "lemonchiffon"         "lemonchiffon1"        "lemonchiffon2"       
+[397] "lemonchiffon3"        "lemonchiffon4"        "lightblue"           
+[400] "lightblue1"           "lightblue2"           "lightblue3"          
+[403] "lightblue4"           "lightcoral"           "lightcyan"           
+[406] "lightcyan1"           "lightcyan2"           "lightcyan3"          
+[409] "lightcyan4"           "lightgoldenrod"       "lightgoldenrod1"     
+[412] "lightgoldenrod2"      "lightgoldenrod3"      "lightgoldenrod4"     
+[415] "lightgoldenrodyellow" "lightgray"            "lightgreen"          
+[418] "lightgrey"            "lightpink"            "lightpink1"          
+[421] "lightpink2"           "lightpink3"           "lightpink4"          
+[424] "lightsalmon"          "lightsalmon1"         "lightsalmon2"        
+[427] "lightsalmon3"         "lightsalmon4"         "lightseagreen"       
+[430] "lightskyblue"         "lightskyblue1"        "lightskyblue2"       
+[433] "lightskyblue3"        "lightskyblue4"        "lightslateblue"      
+[436] "lightslategray"       "lightslategrey"       "lightsteelblue"      
+[439] "lightsteelblue1"      "lightsteelblue2"      "lightsteelblue3"     
+[442] "lightsteelblue4"      "lightyellow"          "lightyellow1"        
+[445] "lightyellow2"         "lightyellow3"         "lightyellow4"        
+[448] "limegreen"            "linen"                "magenta"             
+[451] "magenta1"             "magenta2"             "magenta3"            
+[454] "magenta4"             "maroon"               "maroon1"             
+[457] "maroon2"              "maroon3"              "maroon4"             
+[460] "mediumaquamarine"     "mediumblue"           "mediumorchid"        
+[463] "mediumorchid1"        "mediumorchid2"        "mediumorchid3"       
+[466] "mediumorchid4"        "mediumpurple"         "mediumpurple1"       
+[469] "mediumpurple2"        "mediumpurple3"        "mediumpurple4"       
+[472] "mediumseagreen"       "mediumslateblue"      "mediumspringgreen"   
+[475] "mediumturquoise"      "mediumvioletred"      "midnightblue"        
+[478] "mintcream"            "mistyrose"            "mistyrose1"          
+[481] "mistyrose2"           "mistyrose3"           "mistyrose4"          
+[484] "moccasin"             "navajowhite"          "navajowhite1"        
+[487] "navajowhite2"         "navajowhite3"         "navajowhite4"        
+[490] "navy"                 "navyblue"             "oldlace"             
+[493] "olivedrab"            "olivedrab1"           "olivedrab2"          
+[496] "olivedrab3"           "olivedrab4"           "orange"              
+[499] "orange1"              "orange2"              "orange3"             
+[502] "orange4"              "orangered"            "orangered1"          
+[505] "orangered2"           "orangered3"           "orangered4"          
+[508] "orchid"               "orchid1"              "orchid2"             
+[511] "orchid3"              "orchid4"              "palegoldenrod"       
+[514] "palegreen"            "palegreen1"           "palegreen2"          
+[517] "palegreen3"           "palegreen4"           "paleturquoise"       
+[520] "paleturquoise1"       "paleturquoise2"       "paleturquoise3"      
+[523] "paleturquoise4"       "palevioletred"        "palevioletred1"      
+[526] "palevioletred2"       "palevioletred3"       "palevioletred4"      
+[529] "papayawhip"           "peachpuff"            "peachpuff1"          
+[532] "peachpuff2"           "peachpuff3"           "peachpuff4"          
+[535] "peru"                 "pink"                 "pink1"               
+[538] "pink2"                "pink3"                "pink4"               
+[541] "plum"                 "plum1"                "plum2"               
+[544] "plum3"                "plum4"                "powderblue"          
+[547] "purple"               "purple1"              "purple2"             
+[550] "purple3"              "purple4"              "red"                 
+[553] "red1"                 "red2"                 "red3"                
+[556] "red4"                 "rosybrown"            "rosybrown1"          
+[559] "rosybrown2"           "rosybrown3"           "rosybrown4"          
+[562] "royalblue"            "royalblue1"           "royalblue2"          
+[565] "royalblue3"           "royalblue4"           "saddlebrown"         
+[568] "salmon"               "salmon1"              "salmon2"             
+[571] "salmon3"              "salmon4"              "sandybrown"          
+[574] "seagreen"             "seagreen1"            "seagreen2"           
+[577] "seagreen3"            "seagreen4"            "seashell"            
+[580] "seashell1"            "seashell2"            "seashell3"           
+[583] "seashell4"            "sienna"               "sienna1"             
+[586] "sienna2"              "sienna3"              "sienna4"             
+[589] "skyblue"              "skyblue1"             "skyblue2"            
+[592] "skyblue3"             "skyblue4"             "slateblue"           
+[595] "slateblue1"           "slateblue2"           "slateblue3"          
+[598] "slateblue4"           "slategray"            "slategray1"          
+[601] "slategray2"           "slategray3"           "slategray4"          
+[604] "slategrey"            "snow"                 "snow1"               
+[607] "snow2"                "snow3"                "snow4"               
+[610] "springgreen"          "springgreen1"         "springgreen2"        
+[613] "springgreen3"         "springgreen4"         "steelblue"           
+[616] "steelblue1"           "steelblue2"           "steelblue3"          
+[619] "steelblue4"           "tan"                  "tan1"                
+[622] "tan2"                 "tan3"                 "tan4"                
+[625] "thistle"              "thistle1"             "thistle2"            
+[628] "thistle3"             "thistle4"             "tomato"              
+[631] "tomato1"              "tomato2"              "tomato3"             
+[634] "tomato4"              "turquoise"            "turquoise1"          
+[637] "turquoise2"           "turquoise3"           "turquoise4"          
+[640] "violet"               "violetred"            "violetred1"          
+[643] "violetred2"           "violetred3"           "violetred4"          
+[646] "wheat"                "wheat1"               "wheat2"              
+[649] "wheat3"               "wheat4"               "whitesmoke"          
+[652] "yellow"               "yellow1"              "yellow2"             
+[655] "yellow3"              "yellow4"              "yellowgreen"         </code></pre>
+</div>
+</div>
+<p>Gives you all the colors in R You can specify colors()[<number>] to get the colors according to the number assigned to the color</number></p>
+<pre><code>                            ####BOX PLOT######
+                            </code></pre>
+<p>Also known as Box and Whisker plot which are the two lines above and below the box</p>
+<p>Gap between FIrst and 3rd Quartile is called Inter Quartile Range (IQR) In boxplot we only plot quartiles #Any data point that is 1.5IQR away from the edge of Box Plot it is tagged as Outlier</p>
+<p>Outliers are extreme Observations that need to be tracked, more the variation more the outliers</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(cars93<span class="sc">$</span>Price) <span class="co">#Some outliers</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(d<span class="sc">$</span>price)      <span class="co">#Many Outliers</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(cars93<span class="sc">$</span>RPM) <span class="co">#No outliers</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-9-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(d<span class="sc">$</span>depth) <span class="co">#Too many outliers</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-9-4.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>If we want to do boxplots for one col related to another col(Like group by)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(cars93<span class="sc">$</span>Price <span class="sc">~</span> cars93<span class="sc">$</span>Type) <span class="co">#Price for every category</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(d<span class="sc">$</span>depth <span class="sc">~</span> d<span class="sc">$</span>cut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>IF we want to change the scale it is ylim for y axis and xlim for xaxis</p>
+<pre><code>                  ###########SCATTERPLOT##########
+                  
+                  </code></pre>
+<p>Pch stands for Plotting Character, its the legend that marks a data point Col for which color for the pch</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars93<span class="sc">$</span>Price,cars93<span class="sc">$</span>MPG.city)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars93<span class="sc">$</span>Price,cars93<span class="sc">$</span>MPG.city,<span class="at">pch=</span><span class="dv">18</span>, <span class="at">col =</span><span class="st">"green"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>xlab = Xlabel ylab = Ylabel main=Name of the graph</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars93<span class="sc">$</span>Price,cars93<span class="sc">$</span>MPG.city,<span class="at">pch=</span><span class="dv">18</span>, <span class="at">col =</span><span class="st">"green"</span>, <span class="at">xlab=</span><span class="st">"Car Price"</span>, <span class="at">ylab=</span><span class="st">"Miles per Gallon"</span>,</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Scatter"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<pre><code>                      ########LINE PLOT###########</code></pre>
+<p>For timeseries based graphs X axis should be time WHenever we plot against time its better to plot it as a linegraph</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"E:/R/Datasets/"</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>gas <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Gasoline.csv"</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gas<span class="sc">$</span>Week, gas<span class="sc">$</span>Sales, <span class="at">type=</span><span class="st">'l'</span>) <span class="co">#Type = l for lineplot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gas<span class="sc">$</span>Week, gas<span class="sc">$</span>Sales, <span class="at">type=</span><span class="st">'b'</span>)<span class="co">#Type = b for lineplot and show the data points</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<pre><code>                        ####DENSITY PLOT#####</code></pre>
+<p>Like histogram, but smoothened Call density function on the data and then use Plot()</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>cars93<span class="sc">$</span>Price <span class="sc">|&gt;</span> <span class="fu">density</span>() <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>OR</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(cars93<span class="sc">$</span>Price))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>#————————————————————————————–# ##################### # GGPLOT2 # #####################</p>
+<p>For ggplot2, use function ggplot, specify the dataframe, then function aes[AESTHETIC] within it to specify what is gonna be x axis and y axis and then USE “+” operator and pass the relevant plot function</p>
+<p>geom_point() for scatterplot</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"E:/R/Datasets/"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>sal <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Salaries.csv"</span>, <span class="at">stringsAsFactors =</span> T)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>sal, <span class="fu">aes</span>(<span class="at">x=</span>yrs.service,<span class="at">y=</span>salary)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>If values correspond to specific groups/ranks/columns we can specify separate colors for them For rank</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>sal, <span class="fu">aes</span>(<span class="at">x=</span>yrs.service,<span class="at">y=</span>salary,<span class="at">color=</span>rank)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>For Gender</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>sal, <span class="fu">aes</span>(<span class="at">x=</span>yrs.service,<span class="at">y=</span>salary,<span class="at">color=</span>sex)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Day3_2_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
